@@ -3,7 +3,7 @@ name: job-scraper
 description: >
   Searches job sites for new positions matching your profile. Deduplicates across runs.
   Triggers on: job scrape, find jobs, search jobs, new jobs, job search, scrape jobs, /scrape
-allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Agent, AskUserQuestion, Bash(bun run .agents/skills/linkedin-search/cli/src/cli.ts *), Bash(bun run .agents/skills/jobbank-canada-search/cli/src/cli.ts *), Bash(bun run .agents/skills/talent-search/cli/src/cli.ts *)
+allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Agent, AskUserQuestion, Bash(bun run .agents/skills/linkedin-search/cli/src/cli.ts *), Bash(bun run .agents/skills/jobbank-canada-search/cli/src/cli.ts *), Bash(bun run .agents/skills/talent-search/cli/src/cli.ts *), Bash(bun run .agents/skills/remoteok-search/cli/src/cli.ts *), Bash(bun run .agents/skills/weworkremotely-search/cli/src/cli.ts *)
 ---
 
 # Job Scraper

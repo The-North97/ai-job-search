@@ -10,6 +10,8 @@ Structured CLI tools (prefer these - live, parseable, deduplicatable):
 - **linkedin-search** - `bun run .agents/skills/linkedin-search/cli/src/cli.ts` (country-agnostic; pass `-l "Toronto, Ontario, Canada"` or `-l "Remote"`)
 - **jobbank-canada-search** - `bun run .agents/skills/jobbank-canada-search/cli/src/cli.ts` (Job Bank Canada; aggregates provincial + partner boards. Filters by province `-p ON` / remote `--remote remote`, not city)
 - **talent-search** - `bun run .agents/skills/talent-search/cli/src/cli.ts` (Talent.com Canada aggregator; free-text `-l "Toronto, ON"` / `-l "Remote"`, `--jobage`/`--sort date` applied client-side. Personal use only.)
+- **remoteok-search** - `bun run .agents/skills/remoteok-search/cli/src/cli.ts` (RemoteOK; fully-remote roles worldwide. `-q` matches title+company; `-l` filters region e.g. "Americas". Personal use only.)
+- **weworkremotely-search** - `bun run .agents/skills/weworkremotely-search/cli/src/cli.ts` (We Work Remotely; fully-remote software roles by category. `-c remote-back-end-programming-jobs` etc., or `-c all`; `-q` matches title+company.)
 
 Secondary (WebSearch with `site:` filters):
 - **indeed.ca** - largest Canadian job board (aggressively blocks scrapers; WebSearch only)
@@ -82,6 +84,18 @@ Talent.com (aggregator; catches postings the others miss):
 ```
 bun run .agents/skills/talent-search/cli/src/cli.ts search -q "software developer" -l "Ontario" --jobage 14 --sort date --format json
 bun run .agents/skills/talent-search/cli/src/cli.ts search -q "backend developer" -l "Remote" --jobage 14 --format json
+```
+
+RemoteOK (fully-remote; -l filters region, optional):
+```
+bun run .agents/skills/remoteok-search/cli/src/cli.ts search -q "backend engineer" --jobage 14 --format json
+bun run .agents/skills/remoteok-search/cli/src/cli.ts search -q "software" -l "Americas" --jobage 14 --format json
+```
+
+We Work Remotely (fully-remote software; -c selects category):
+```
+bun run .agents/skills/weworkremotely-search/cli/src/cli.ts search -q "backend" -c remote-back-end-programming-jobs --jobage 30 --format json
+bun run .agents/skills/weworkremotely-search/cli/src/cli.ts search -c remote-full-stack-programming-jobs --jobage 30 --format json
 ```
 
 ## Location Filter
