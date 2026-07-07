@@ -1,9 +1,9 @@
 ---
 name: job-scraper
 description: >
-  Scrapes Danish job sites for new positions matching your profile. Deduplicates across runs.
+  Searches job sites for new positions matching your profile. Deduplicates across runs.
   Triggers on: job scrape, find jobs, search jobs, new jobs, job search, scrape jobs, /scrape
-allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Agent, AskUserQuestion
+allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Agent, AskUserQuestion, Bash(bun run .agents/skills/linkedin-search/cli/src/cli.ts *), Bash(bun run .agents/skills/jobbank-canada-search/cli/src/cli.ts *), Bash(bun run .agents/skills/talent-search/cli/src/cli.ts *), Bash(bun run .agents/skills/remoteok-search/cli/src/cli.ts *), Bash(bun run .agents/skills/weworkremotely-search/cli/src/cli.ts *)
 ---
 
 # Job Scraper
@@ -12,7 +12,9 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Agent, AskUse
 
 ## How It Works
 
-This skill searches multiple Danish job sites using targeted queries based on your profile, deduplicates against previously seen jobs and the application tracker, and presents new matches with a quick fit assessment.
+This skill searches job sites using targeted queries based on your profile, deduplicates against previously seen jobs and the application tracker, and presents new matches with a quick fit assessment.
+
+**Primary source (Canada / any market):** the country-agnostic `linkedin-search` CLI returns live, structured listings with no auth. Prefer it over WebSearch when possible. Secondary sources are Indeed.ca and company career pages via Google `site:` queries. See `search-queries.md` for the configured queries and location tiers.
 
 ## Invocation
 
@@ -38,13 +40,15 @@ Optional arguments:
 
 ### Step 1: Search
 
-Run **WebSearch** queries from `search-queries.md`. By default, run the top 3 priority categories. If the user said "broad", run all categories.
+By default, run the top 3 priority categories from `search-queries.md`. If the user said "broad", run all categories. If the user specified a focus area (e.g. "backend" or "ai"), prioritize queries from that category.
 
-If the user specified a focus area (e.g. "data science"), prioritize queries from that category.
+**Prefer the LinkedIn CLI** for the primary pass - it returns structured, deduplicatable results directly:
+```bash
+bun run .agents/skills/linkedin-search/cli/src/cli.ts search -q "<role or skill>" -l "<location or Remote>" --jobage 14 --limit 10 --format json
+```
+Run it once per priority role/skill, varying `-q` and `-l` (e.g. `-l "Toronto, Ontario, Canada"` and `-l "Remote"`). Then, for broader coverage, run **WebSearch** on the Indeed.ca / Google `site:` queries in `search-queries.md`.
 
-For each search:
-- Use `WebSearch` with site-specific queries (jobindex.dk, linkedin.com/jobs, karriere.dk, etc.)
-- Target your configured geographic area
+- Target the configured location tiers (remote-first; GTA hybrid outside downtown Toronto core)
 - Look for postings from the last 14 days
 
 ### Step 2: Fetch & Parse

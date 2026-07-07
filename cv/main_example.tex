@@ -1,8 +1,7 @@
-%% Example CV - [YOUR_NAME]
+%% Example CV - James E. Parker
 %% Comprehensive overview of all competencies, experience, and achievements.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
-%% SETUP: Run /setup to populate this with your actual information.
 %% Compile with: lualatex main_example.tex
 %% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
 
@@ -18,24 +17,25 @@
 \renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
 
 \usepackage[utf8]{inputenc}
+\usepackage{needspace}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={James E. Parker - CV},
     pdfpagemode=FullScreen,
 }
 \usepackage[scale=0.80]{geometry}
 \usepackage{import}
 
 % personal data
-\name{[First]}{[Last]}
-\address{[Your Address, City, Country]}{}{}
-\phone[mobile]{[+XX XXXXXXXXXX]}
-\email{[your.email@example.com]}
-\extrainfo{\href{[https://linkedin.com/in/your-profile]}{LinkedIn}, \href{[https://github.com/your-username]}{GitHub}}
+\name{James}{Parker}
+\address{Vaughan, ON, Canada}{}{}
+\phone[mobile]{+1 (647) 802 2242}
+\email{james@partec.ca}
+\extrainfo{\href{https://www.linkedin.com/in/james-e-parker/}{LinkedIn}, \href{https://github.com/JEP97}{GitHub}, \href{http://www.partec.ca/}{partec.ca}}
 
 \begin{document}
 
@@ -46,7 +46,7 @@
 % ============================================================
 
 \vspace{6pt}
-\small{[Write a 3-5 line profile statement tailored to the role you're applying for. Focus on what makes you uniquely qualified. Example: "Data scientist with a PhD in [field] and X years of industry experience. Combines deep domain expertise in [domain] with strong applied machine learning and Python development skills. Experienced in developing end-to-end ML pipelines, from data ingestion to stakeholder-facing dashboards."]}
+\small{Software Engineer with 4+ years building scalable backend systems and APIs in B2B SaaS. Backend subject-matter expert specializing in Java, Kubernetes, and event-driven architecture, with a track record of shipping net-new, high-throughput data pipelines and applied-AI automation. Recently built an AWS Bedrock taxonomy-matching system that cut a 40-week process by roughly 70\%. Team Scrum Master known for clear communication and bridging perspectives across teams, and founder of an independent software practice (Partec) delivering full-stack products for clients.}
 
 % ============================================================
 %     CORE COMPETENCIES
@@ -56,15 +56,17 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools. Be concrete.]
+\item \textbf{Backend \& API Design}: Java (Jersey), REST/JSON APIs, EDI integrations, item/assortment data systems.
 
-\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
+\item \textbf{Event-Driven Architecture \& Data}: Kafka/AMQ eventing, high-throughput batched pipelines, Databricks, large-scale data manipulation.
 
-\item \textbf{[Skill Category 3]}: [Specific skills, frameworks, tools.]
+\item \textbf{Applied AI}: AWS Bedrock (multi-model), LLM-assisted automation, Claude Code as a daily development tool.
 
-\item \textbf{[Skill Category 4]}: [Domain expertise, methods, approaches.]
+\item \textbf{Cloud \& DevOps}: AWS (Bedrock, ECS, RDS), Azure, Docker, Kubernetes, CI/CD, code review, unit \& behavioral testing.
 
-\item \textbf{[Skill Category 5]}: [Tools, platforms, software.]
+\item \textbf{Full-Stack}: TypeScript/React, Python (Django, Flask), C\#, SQL (PostgreSQL, Oracle, MySQL).
+
+\item \textbf{Delivery}: Scrum Master, Agile/SCRUM, Jira, Confluence, cross-team collaboration.
 
 \end{itemize}
 
@@ -77,31 +79,34 @@
 \begin{itemize}
 
 % --- Most Recent Role ---
-\item{\cventry{[YYYY--Present]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\needspace{5\baselineskip}
+\item{\cventry{2023--Present}{Software Engineer}{SPS Commerce}{Remote / Vaughan, ON}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1 - be specific, use numbers where possible]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
-    \item [Achievement or responsibility 4]
+    \item Backend subject-matter expert on the item-management API; specialized in Java and Kubernetes.
+    \item Built an AI taxonomy-matching solution using AWS Bedrock (multiple models) to map retailer taxonomies onto SPS's taxonomy; first-pass ~70\% accurate, second-pass 90\%+, cutting a process averaging 40 weeks by ~70\%.
+    \item Designed a net-new event-driven pipeline streaming database records into Databricks, handling tens of thousands of messages from batched endpoints.
+    \item Retrofitted monitoring into legacy products, giving customers performance baselines they previously lacked.
+    \item Serves as team Scrum Master, running Agile ceremonies and coordinating cross-team delivery.
 \end{itemize}}}
 
 \vspace{3pt}
 
 % --- Previous Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\needspace{5\baselineskip}
+\item{\cventry{2022--2023}{Associate Software Engineer II}{SPS Commerce}{Remote / Vaughan, ON}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
+    \item Shaped and built scalable EDI APIs from the ground up for the Assortment product, reducing complexity for customers and multiple teams.
+    \item Delivered across the stack: TypeScript/React front end and Java/Jersey back end.
 \end{itemize}}}
 
 \vspace{3pt}
 
-% --- Earlier Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+% --- Independent Practice ---
+\needspace{5\baselineskip}
+\item{\cventry{2020--Present}{Founder / Software Developer}{Partec}{Vaughan, ON}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
+    \item Independent contract development, from debugging large codebases to shipping commercial products.
+    \item Built a desktop/web employee-scheduling app (Django, AWS, Telegram) for a multi-location Booster Juice franchisee; bug-hunting and UI tooling on a large game codebase (Genfanad); file-transfer utilities for a legal practice.
 \end{itemize}}}
 
 \end{itemize}
@@ -114,15 +119,11 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-Thesis: ``[Thesis Title].'' [Brief description of research focus.]
-}}
+\item{\cventry{2018--2023}{Self-directed Computer Science coursework}{Codecademy, Udemy, freeCodeCamp}{}{}{}}
 
 \vspace{3pt}
 
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-[Brief description or key topics.]
-}}
+\item{\cventry{2015--2018}{Business \& Financial Economics}{York University (LA\&PS)}{Toronto, ON}{}{}}
 
 \end{itemize}
 
@@ -133,27 +134,18 @@ Thesis: ``[Thesis Title].'' [Brief description of research focus.]
 \section{Languages}
 \vspace{1pt}
 \begin{itemize}
-\item [Language 1] (native), [Language 2] (fluent), [Language 3] (intermediate).
+\item English (native).
 \end{itemize}
 
 % ============================================================
-%     PUBLICATIONS (optional)
+%     SELECTED PROJECTS
 % ============================================================
 
-\section{Publications}
+\section{Selected Projects}
 \vspace{1pt}
 \begin{itemize}
-\item [Author(s)] ([Year]). [Title]. [Journal/Conference]. \href{[DOI_URL]}{DOI link}
-\end{itemize}
-
-% ============================================================
-%     HONORS AND AWARDS (optional)
-% ============================================================
-
-\section{Honors and Awards}
-\vspace{1pt}
-\begin{itemize}
-\item{\textbf{[Award Name]} -- [Event/Organization] ([Year]).}
+\item \textbf{Data Coil}: auto-transfers Tesla dashcam clips to a home PC over the local network via a Raspberry Pi and SMB share.
+\item \textbf{Scrapers}: York-region vaccine-appointment scraper; SEC Form 4 filing scraper with automated trading actions.
 \end{itemize}
 
 % ============================================================

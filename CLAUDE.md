@@ -1,10 +1,7 @@
-# Job Application Assistant for [YOUR_NAME]
-
-<!-- SETUP: This file is populated by running /setup -->
-<!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
+# Job Application Assistant for James Parker
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for James Parker, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -13,68 +10,70 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ## Candidate Profile
 
-<!-- This section is auto-populated by /setup. You can also fill it in manually. -->
-
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
-- **Languages:** [YOUR_LANGUAGES]
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+- **Name:** James E. Parker
+- **Location:** Vaughan, ON, Canada (Greater Toronto Area; remote-first, hybrid acceptable outside downtown Toronto)
+- **Languages:** English (native)
+- **Status:** Employed full-time at SPS Commerce (Software Engineer). On track for a Senior Software Engineer promotion (~early 2027). Passively exploring the market and benchmarking compensation; not urgently job-hunting. Target comp ~CAD 120k.
+- **LinkedIn headline:** "Software Engineer at SPS Commerce | Backend"
+- **LinkedIn:** https://www.linkedin.com/in/james-e-parker/
+- **GitHub:** https://github.com/JEP97
+- **Website:** http://www.partec.ca/ (dated; not a strong sample of current skills)
 
 ### Education
-<!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **Self-directed Computer Science coursework** (2018-2023) - Codecademy, Udemy, freeCodeCamp
+- **Business & Financial Economics** (2015-2018) - York University (LA&PS), Toronto, ON (did not complete; pivoted to self-taught computer science)
+- **High school diploma** (2015) - Toronto Montessori School
 
 ### Professional Experience
-<!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **Software Engineer** (Sep 2023 - present) - **SPS Commerce** (Remote / Vaughan, ON)
+  - Backend subject-matter expert on the item-management API; specialized in Java and Kubernetes; team Scrum Master
+  - Built an AI taxonomy-matching solution with AWS Bedrock (multiple models) mapping retailer taxonomies to SPS's - first-pass ~70% accuracy, second-pass 90%+ - cutting a process that averaged 40 weeks by ~70%
+  - Designed a net-new event-driven pipeline streaming database records into Databricks as fast as possible, handling tens of thousands of messages from batched endpoints
+  - Retrofitted monitoring/observability into legacy products, giving customers performance baselines they previously lacked
+- **Associate Software Engineer II** (May 2022 - Sep 2023) - **SPS Commerce** (Remote / Vaughan, ON)
+  - Built scalable EDI APIs from the ground up for the Assortment product, reducing complexity for customers and partner teams
+  - Delivered across the stack: TypeScript/React front end, Java/Jersey back end
+- **Founder / Software Developer** (Aug 2020 - present) - **Partec** (Vaughan, ON)
+  - Independent contract development: desktop/web employee-scheduling app (Django, AWS, Telegram) for a multi-location Booster Juice franchisee; bug-hunting and UI tooling on a large game codebase (Genfanad); file-transfer utilities for a legal practice
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+- **Primary:** Java, Kubernetes, backend & REST API design, event-driven architecture
+- **Secondary:** TypeScript/React, Python (Django, Flask), C#, Scala, SQL/PostgreSQL/Oracle
+- **Domain:** EDI & retail supply-chain data integration, large-scale data pipelines, applied AI / LLMs
+- **Software:** AWS (Bedrock, ECS, RDS), Databricks, Docker, Kafka/AMQ, Azure, Git, Jira, Confluence, Claude Code
 
 ### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+- **Self-directed Computer Science coursework** - Codecademy, Udemy, freeCodeCamp (2018-2023)
 
 ### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+- None
 
 ### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+- None
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+- **Birkman colours: Blue > Red > Green > Yellow** - idea-first and reflective, then action-oriented, then people-oriented, with process/admin last
+- **Clear, explicit communicator** - repeatedly praised by coworkers for communication clarity
+- **Bridge-builder** - strong at seeing multiple perspectives and mediating when others struggle to understand each other
+- **Fast learner / AI advocate** - picks up new concepts quickly, in part through active use of AI tooling
+- **Strengths:** transparent collaboration, clear communication, quick comprehension, autonomy on meaningful work
+- **Growth areas:** dislikes being context-switched off active work without a good reason
+- **Thrives in:** transparent teams, autonomy, building things of tangible value; comfortable both collaborating and working solo
 
 ### What Excites You
-<!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+- Building things with tangible value that make someone's day easier
+- Cool tech in areas of personal interest: cars, robots, AI, games (a personal interest in the field is a plus, not a requirement)
+- Applied AI / LLM tooling and being an early adopter
 
 ### Target Sectors
-<!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+- B2B SaaS / data platforms: SPS Commerce-style supply-chain and data-integration companies
+- Applied AI / ML product companies
+- Areas of personal interest (bonus): automotive/robotics, gaming
 
 ### Deal-breakers
-<!-- Hard constraints on job search -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- Daily on-site work in the downtown Toronto core (remote strongly preferred; hybrid acceptable if not downtown core)
+- Opaque or "shady" management; lack of transparency
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
