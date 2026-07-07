@@ -1,70 +1,100 @@
 # Search Queries for Job Scraper
 
-<!-- SETUP: Customize these queries based on your skills, target roles, and location -->
+<!-- Configured for James Parker: Greater Toronto Area + remote Canada, backend/AI software roles. -->
+
+> **Note:** The framework's built-in scraper CLI tools target the **Danish** job market (Jobindex, Jobnet, etc.) and do not apply here. Use the LinkedIn/Indeed/Google `site:` queries below with the `/apply` workflow, or wire up Canadian portal integrations later.
 
 ## Search Sites
 
-Primary (Danish job market):
-- **jobindex.dk** - largest Danish job board
-- **linkedin.com/jobs** - LinkedIn job listings (filter: Denmark / your city)
-- **karriere.dk** - IDA's job board (engineering/science roles)
-- **jobfinder.dk** - another major Danish job board
-- **akademikernes.dk** - academic union job board
+Structured CLI tools (prefer these - live, parseable, deduplicatable):
+- **linkedin-search** - `bun run .agents/skills/linkedin-search/cli/src/cli.ts` (country-agnostic; pass `-l "Toronto, Ontario, Canada"` or `-l "Remote"`)
+- **jobbank-canada-search** - `bun run .agents/skills/jobbank-canada-search/cli/src/cli.ts` (Job Bank Canada; aggregates provincial + partner boards. Filters by province `-p ON` / remote `--remote remote`, not city)
+- **talent-search** - `bun run .agents/skills/talent-search/cli/src/cli.ts` (Talent.com Canada aggregator; free-text `-l "Toronto, ON"` / `-l "Remote"`, `--jobage`/`--sort date` applied client-side. Personal use only.)
 
-Secondary (company career pages via Google):
-- Direct Google searches with `site:` filters for known target companies
+Secondary (WebSearch with `site:` filters):
+- **indeed.ca** - largest Canadian job board (aggressively blocks scrapers; WebSearch only)
+- **glassdoor.ca** - listings + company reviews and salary data
+- **wellfound.com** (AngelList Talent) - startup / AI-forward roles, often remote
+- Company career pages via Google `site:` filters
 
 ## Query Categories
 
-Queries are grouped by priority. Each query should be combined with your location terms (e.g. "Copenhagen", "Sjælland", "Hovedstaden") where the site supports it.
+Queries are grouped by priority. Combine each with location terms where the site supports it: "Remote", "Canada", "Toronto", "Vaughan", "GTA".
 
-### Priority 1: [YOUR_PRIMARY_ROLE_TYPE]
+### Priority 1: Backend / Distributed-Systems Software Engineer
 
-These match your strongest and most desired career direction.
-
-```
-site:jobindex.dk "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_CITY]
-site:jobindex.dk "[YOUR_KEY_SKILL]" [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_COUNTRY]
-```
-
-### Priority 2: [YOUR_DOMAIN_EXPERTISE]
-
-These match your domain expertise.
+Strongest and most desired direction.
 
 ```
-site:jobindex.dk [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] OR [YOUR_REGION]
-site:jobindex.dk [YOUR_DOMAIN_KEYWORD_2] [YOUR_COUNTRY]
-site:linkedin.com/jobs [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] [YOUR_COUNTRY]
+site:linkedin.com/jobs "Senior Software Engineer" backend Java remote Canada
+site:linkedin.com/jobs "Software Engineer" ("event-driven" OR Kafka) remote Canada
+site:linkedin.com/jobs "Backend Developer" Java Kubernetes Toronto
+site:indeed.ca "Software Engineer" backend Java remote
+site:indeed.ca "Senior Software Developer" Kubernetes Toronto OR remote
 ```
 
-### Priority 3: [YOUR_ADJACENT_ROLE_TYPE]
+### Priority 2: Applied AI / AI-Forward Engineering
 
-Adjacent roles you could pivot into.
-
-```
-site:jobindex.dk "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL] [YOUR_CITY]
-site:jobindex.dk "[YOUR_ADJACENT_TITLE_2]" [YOUR_KEY_SKILL] [YOUR_CITY]
-```
-
-### Priority 4: Broader Technical / Consulting
-
-Wider net for general technical roles.
+Leverages the AWS Bedrock / LLM automation work.
 
 ```
-site:jobindex.dk [YOUR_KEY_SKILL] developer [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_KEY_SKILL] developer" [YOUR_CITY]
-site:jobindex.dk "technical consultant" [YOUR_DOMAIN] [YOUR_CITY]
+site:linkedin.com/jobs ("AI Engineer" OR "Applied AI") software remote Canada
+site:linkedin.com/jobs "Software Engineer" (LLM OR Bedrock OR "generative AI") remote
+site:indeed.ca "Machine Learning Engineer" software backend remote Canada
+site:wellfound.com software engineer AI remote canada
+```
+
+### Priority 3: Platform / Data Engineering (adjacent pivots)
+
+Adjacent roles the backend + data-pipeline experience supports.
+
+```
+site:linkedin.com/jobs "Platform Engineer" (Kubernetes OR AWS) remote Canada
+site:linkedin.com/jobs "Data Engineer" (Databricks OR Kafka) remote Canada
+site:indeed.ca "API Engineer" OR "Integration Engineer" Java remote
+```
+
+### Priority 4: Broader Software Roles (wider net)
+
+```
+site:linkedin.com/jobs "Software Developer" Java OR Python remote Canada
+site:indeed.ca "Full Stack Developer" (TypeScript OR React) remote Toronto
+site:linkedin.com/jobs "Software Engineer" B2B SaaS remote Canada
+```
+
+## CLI Queries (run directly - preferred over WebSearch)
+
+Job Bank Canada (province-filtered; `-p ON` covers the GTA, add `--remote remote` for WFH):
+```
+bun run .agents/skills/jobbank-canada-search/cli/src/cli.ts search -q "software developer" -p ON --jobage 14 --sort date --format json
+bun run .agents/skills/jobbank-canada-search/cli/src/cli.ts search -q "backend developer" -p ON --jobage 14 --format json
+bun run .agents/skills/jobbank-canada-search/cli/src/cli.ts search -q "data engineer" -p ON --jobage 14 --format json
+bun run .agents/skills/jobbank-canada-search/cli/src/cli.ts search -q "software developer" --remote remote --jobage 14 --format json
+```
+
+LinkedIn (city + remote):
+```
+bun run .agents/skills/linkedin-search/cli/src/cli.ts search -q "senior software engineer" -l "Toronto, Ontario, Canada" --jobage 14 --format json
+bun run .agents/skills/linkedin-search/cli/src/cli.ts search -q "backend engineer" -l "Remote" --jobage 14 --format json
+```
+
+Talent.com (aggregator; catches postings the others miss):
+```
+bun run .agents/skills/talent-search/cli/src/cli.ts search -q "software developer" -l "Ontario" --jobage 14 --sort date --format json
+bun run .agents/skills/talent-search/cli/src/cli.ts search -q "backend developer" -l "Remote" --jobage 14 --format json
 ```
 
 ## Location Filter
 
-When evaluating results, verify the job location is within reasonable commute distance from your home. Define acceptable areas:
-- [YOUR_CITY] and surrounding areas
-- [ACCEPTABLE_AREA_1]
-- [ACCEPTABLE_AREA_2]
-- [BORDERLINE_AREA] (borderline - ~X min by transit)
-- [TOO_FAR_AREA] (too far)
+When evaluating results, verify the job location fits James's constraints (remote-first; hybrid acceptable outside the downtown Toronto core; no relocation):
+- **Ideal:** Fully remote (Canada) or remote-first
+- **Acceptable:** Hybrid in the GTA north/west - Vaughan, Concord, Woodbridge, Thornhill, Markham, Richmond Hill, North York, Mississauga
+- **Borderline:** Hybrid in downtown Toronto core (only if infrequent / low-commute-frequency)
+- **Too far / disqualifying:** Daily on-site in downtown Toronto; any role requiring relocation
+
+## Salary Filter
+
+Target ~CAD 120k. Flag postings clearly below this unless there's a compelling non-comp hook (title, growth path, tech, or a personal-interest domain like automotive/robotics/AI/games).
 
 ## Date Filter
 
@@ -73,4 +103,5 @@ Only include jobs posted within the last 14 days, or with an application deadlin
 ## Adapting Queries
 
 If the user specifies a focus area, select queries from the matching category and also generate 2-3 custom queries for that focus. For example:
-- "/scrape [focus_area]" -> relevant category queries + custom focus-specific queries
+- "/scrape ai" -> Priority 2 queries + custom applied-AI queries
+- "/scrape backend remote" -> Priority 1 queries filtered to remote-only
