@@ -105,12 +105,14 @@ Write 5-7 lines that function as an "elevator pitch": a concise, compelling intr
 
 **Create 2-3 profile statement templates for your main role types:**
 
-<!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+**For backend / distributed-systems roles:**
+> Software Engineer with 4+ years building scalable backend systems and APIs in B2B SaaS. Backend subject-matter expert specializing in Java, Kubernetes, and event-driven architecture, with a track record of shipping net-new, high-throughput data pipelines. Recently designed an eventing pipeline moving tens of thousands of batched messages into Databricks. Team Scrum Master who communicates with unusual clarity and bridges gaps across teams.
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For applied-AI / AI-forward engineering roles:**
+> Software Engineer who pairs solid backend fundamentals with hands-on applied AI. Built an AWS Bedrock taxonomy-matching system (multi-model) that automated retailer-to-SPS taxonomy mapping and cut a 40-week process by roughly 70%. An early AI adopter and internal advocate who uses tooling like Claude Code to move faster than peers, while keeping systems production-grade in Java and Kubernetes.
+
+**For senior / broader software-engineer roles:**
+> Backend-focused Software Engineer and subject-matter expert with a record of owning systems end-to-end: net-new EDI and item-management APIs, a high-throughput Databricks pipeline, and monitoring retrofitted into legacy products to give customers performance baselines. Serves as team Scrum Master and runs an independent software practice (Partec) shipping full-stack products for clients. Known for clear communication and bridging perspectives across teams.
 
 ### Core Competencies / Skills Section (Best Practice)
 Reorder and emphasize based on the role. Use bold category labels.

@@ -1,7 +1,5 @@
 # Job Evaluation Framework
 
-<!-- SETUP: Skill match areas and career goals are personalized by running /setup -->
-
 ## Scoring Dimensions
 
 Evaluate each job posting against these five dimensions:
@@ -16,9 +14,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** Java, backend & REST API design, Kubernetes/Docker, event-driven architecture, high-throughput data pipelines, AWS (Bedrock, ECS, RDS), EDI integrations, applied AI/LLMs, TypeScript/React
+**Moderate match areas:** Python (Django/Flask), C#, Scala, SQL (PostgreSQL/Oracle), Databricks, Kafka/AMQ, Azure, full-stack delivery
+**Weak match areas:** Formal data science / ML modeling from scratch, mobile development, low-level/embedded, formal CS credential (self-taught background)
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -30,12 +28,12 @@ Does work history align with what they're looking for?
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Backend/API engineering in B2B SaaS, EDI & retail supply-chain data integration, event-driven systems, applied-AI automation, cross-team delivery / Scrum Master
+**Moderate:** Full-stack (TS/React) product work, cloud/data-platform engineering, independent full-stack contract delivery (Partec)
+**Entry-level:** People management / team lead (future goal), formal data-science roles, architect-titled roles (doing the work, not yet the title)
 
 ### 3. Behavioral/Culture Fit (0-100)
-Does the role and company culture match the behavioral profile?
+Does the role and company culture match the behavioral profile? (See `02-behavioral-profile.md`.)
 
 | Score | Meaning |
 |-------|---------|
@@ -44,13 +42,17 @@ Does the role and company culture match the behavioral profile?
 | 40-59 | Some friction areas |
 | 0-39 | Significant culture mismatch |
 
-**Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
+**Strong-fit signals:** autonomy/ownership, transparent leadership, greenfield/build-from-scratch work, AI-forward teams, clear and stable priorities, remote-first.
+**Friction signals:** office-first (downtown Toronto core), opaque/"shady" management, rigid heavy process, constant unexplained context-switching.
+
+**Red flags to research:** Department disorganization, work dominated by maintenance over development, opaque leadership, RTO mandates to a downtown core office. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
-- Within commute range: PASS
-- Remote with occasional office: PASS
+- Fully remote (Canada): PASS (ideal)
+- Hybrid outside downtown Toronto core: PASS
+- Hybrid in downtown Toronto core (frequent): FLAG (discuss with user)
 - Requires relocation: FAIL (deal-breaker)
-- Frequent international travel: FLAG (discuss with user)
+- Daily on-site downtown Toronto: FAIL (deal-breaker)
 
 ### 5. Career Alignment & Motivation (0-100)
 Does this role advance career goals and contain tasks that energize?
@@ -63,19 +65,20 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Near term: reach Senior Software Engineer (currently on track at SPS ~early 2027; external Senior roles are a lateral/accelerated path)
+- Mid term: move into engineering management (a few years out)
+- Long term: engineering leadership up to CTO
 
-**Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
-- Non-task factors: leadership style, department culture, company values, degree of autonomy
+**Motivation filter:** Evaluate not just whether he *can* do the tasks, but whether they will *energize* him. Consider:
+- Tasks that energize: building things of tangible value, making users' lives easier, novel/interesting problems, applied AI, tech in areas of personal interest (cars, robots, AI, games)
+- Tasks that drain: being pulled off active work without a good reason, heavy process/admin for its own sake, opaque environments
+- Non-task factors: transparent leadership, autonomy, remote flexibility, a credible growth path toward Senior then leadership
 
-**Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+**Life situation alignment:**
+- **Security**: Currently employed and not in a rush; can afford to be selective and hold out for strong-fit roles.
+- **Flexibility**: Strongly values remote/hybrid flexibility; based in Vaughan, ON.
+- **Compensation**: Target ~CAD 120k. Below that needs a compelling non-comp reason (growth, title, tech, mission).
+- **Professional development**: Wants a clear path to Senior and, eventually, leadership.
 
 ### 6. Salary Benchmark (Optional)
 
@@ -95,7 +98,7 @@ Present findings as:
 | Overall index | XX.X (+/-X.X% vs baseline) |
 ```
 
-Interpret results relative to the baseline defined in the data file's metadata. For index-based data, higher typically means above-market compensation.
+Interpret results relative to the baseline defined in the data file's metadata. For index-based data, higher typically means above-market compensation. James's target baseline is ~CAD 120k.
 
 If the salary tool is not configured, skip this section.
 
@@ -129,7 +132,7 @@ Present the evaluation as:
 
 ### Company Research Checklist
 - [ ] Checked company website (mission, values, recent news)
-- [ ] Checked review sites (Glassdoor, Jobindex, etc.)
+- [ ] Checked review sites (Glassdoor, Blind, etc.)
 - [ ] Checked LinkedIn for team size, recent hires, connections
 - [ ] Checked media for restructuring, growth, or workplace issues
 - [ ] Identified network contacts who may know the team/manager
@@ -149,6 +152,8 @@ Present the evaluation as:
 - **Moderate Fit** (45-59): Consider carefully, discuss with user
 - **Weak Fit** (30-44): Probably skip unless strategic reasons
 - **Poor Fit** (<30): Skip
+
+**Note on selectivity:** James is currently employed and benchmarking, not urgently searching. Bias toward Strong-Fit roles; a Moderate Fit needs a strong hook (comp, tech, growth, or a personal-interest domain) to be worth the effort.
 
 ## Pre-Application: Call the Employer (Best Practice)
 
